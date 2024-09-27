@@ -1,7 +1,10 @@
+import os
+
 recieved=1
 total=0
 cost=0
 more=0
+choice=0
 
 while recieved != 0:
     print("")
@@ -20,7 +23,7 @@ while recieved != 0:
         break
     else:
         print("coin not recognised")
-
+os.system('CLS')
 print(total,"has been input")
 
 print("")
@@ -40,31 +43,51 @@ item=input("What item would you want")
 while item != "End":
     if item == "A1":
         print("That item costs £1.50")
-        cost=150
+        choice=input("Yes or No")
+        if choice == "Yes":
+            cost=150
+            choice=0
     elif item == "A2":
         print("That item costs £1.10")
-        cost = 110
+        choice=input("Yes or No")
+        if choice == "Yes":
+            cost=110
+            choice=0
     elif item == "A3":
         print("That item costs £1.10")
-        cost = 110
+        choice=input("Yes or No")
+        if choice == "Yes":
+            cost=110
+            choice=0
     elif item == "B1":
         print("That item costs £1.50")
-        cost = 150
+        choice=input("Yes or No")
+        if choice == "Yes":
+            cost=150
+            choice=0
     elif item == "B2":
         print("That item costs 90p")
-        cost = 90
+        choice=input("Yes or No")
+        if choice == "Yes":
+            cost=90
+            choice=0
     elif item == "B3":
         print("That item costs £1.30")
-        cost = 130
+        choice=input("Yes or No")
+        if choice == "Yes":
+            cost=130
+            choice=0
     else:
         print("product not recognised")
         break
     
     if total >= cost:
+        print("")
         print("You can afford that!")
         total = total - cost
         print("You have", total,"left")
     elif cost > total:
+        print("")
         print("You don't have enough!")
         
     print("")
@@ -76,8 +99,6 @@ while total >= 100:
     more = more + 1
 
 
-
-print("")
-print("")
+os.system('CLS')
 print("Thank you for using the vending machine")
-print("We have returned £",more,"and",total,"p")
+print("we have returned £",more,"and",total,"p")
