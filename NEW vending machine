@@ -1,0 +1,56 @@
+total=0
+recieved=1
+price=0
+purchase="no"
+more=0
+import os
+code = ["A1" , "A2" , "A3" , "B1" , "B2" , "B3"]
+product = ["sandwich" , "coke" , "pepsi" , "energy"  ,"water" ,  "tea"]
+price   = ["1.50    " , "1.10"  , "1.10 " ,  "1.50   " , "90p" , "1.30"]
+price2 =[150 , 110 , 110 , 150 , 90 , 130]
+while recieved != 0:
+    print("")
+    recieved=input("What cash have you input 10p 20p 50p 100p 200p")
+    match recieved:
+        case  "10p":
+            total=total+10
+        case  "20p":
+            total=total+20
+        case  "50p":
+            total=total+50
+        case  "100p":
+            total=total+100
+        case  "200p":
+            total=total+200
+        case  "0":
+            break
+os.system('CLS')
+print("You have input",total)
+print("    A1       A2       A3      B1        B2     B3")
+print(product)
+print(price)
+want = input("What product would you want")
+for i in range(0,5):
+    if code[i] == want:
+        item=product[i]
+        price=price[i]
+        price2=price2[i]
+os.system('CLS')
+print(item)
+print("This item costs",price)
+choice=input("Would you like this?")
+if choice == "yes":
+    if price2 > total:
+        print("You can't afford that")
+    else:
+        print("You can afford that!")
+        total = total-price2
+        purchase="yes"
+while total >= 100:
+    total = total- 100
+    more = more + 1
+os.system('CLS')
+if purchase == "yes":
+    print("Thank you for your purchase of a",item)
+print("we have returned £",more,"and",total,"p")
+
