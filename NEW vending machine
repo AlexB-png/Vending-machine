@@ -4,13 +4,14 @@ price=0
 purchase="no"
 more=0
 import os
+os.system('CLS')
 code = ["A1" , "A2" , "A3" , "B1" , "B2" , "B3"]
 product = ["sandwich" , "coke" , "pepsi" , "energy"  ,"water" ,  "tea"]
 price   = ["1.50    " , "1.10"  , "1.10 " ,  "1.50   " , "90p" , "1.30"]
 price2 =[150 , 110 , 110 , 150 , 90 , 130]
 while recieved != 0:
     print("")
-    recieved=input("What cash have you input 10p 20p 50p 100p 200p")
+    recieved=input("What cash have you input 10p 20p 50p £1 £2")
     match recieved:
         case  "10p":
             total=total+10
@@ -18,9 +19,9 @@ while recieved != 0:
             total=total+20
         case  "50p":
             total=total+50
-        case  "100p":
+        case  "£1":
             total=total+100
-        case  "200p":
+        case  "£2":
             total=total+200
         case  "0":
             break
@@ -29,6 +30,7 @@ print("You have input",total)
 print("    A1       A2       A3      B1        B2     B3")
 print(product)
 print(price)
+print("")
 want = input("What product would you want")
 for i in range(0,5):
     if code[i] == want:
