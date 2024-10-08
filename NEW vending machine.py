@@ -65,7 +65,7 @@ if id == 1:
     os.system('CLS')
     print(item)
     print("This item costs",price)
-    choice=input("Would you like this?\n")
+    choice=input("Would you like this? (yes or no)\n")
     if choice == "yes":
         os.system('CLS')
         if price2 > total:
