@@ -102,3 +102,4 @@ while total >= 100:
 os.system('CLS')
 print("Thank you for using the vending machine")
 print("we have returned £",more,"and",total,"p")
+print("IF YOU ARE READING THIS THEN ITS THE WRONG CODE")
