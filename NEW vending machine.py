@@ -15,6 +15,7 @@ product = ["sandwich" , "coke" , "pepsi" , "energy"  ,"water" ,  "tea"]
 price   = ["1.50    " , "1.10"  , "1.10 " ,  "1.50   " , "90p" , "1.30"]
 price2 =[150 , 110 , 110 , 150 , 90 , 130]
 
+#detects what coin has been put into the machine#
 while recieved != 0:
     print("")
     recieved=input("What cash have you input 10p 20p 50p £1 £2 or input 0 to type product code\n")
@@ -34,6 +35,7 @@ while recieved != 0:
 
 os.system('CLS')
 
+#prints products,price and item code#
 print("You have input",total)
 print("    A1       A2       A3      B1        B2     B3")
 print(product)
@@ -42,6 +44,7 @@ print("")
 
 want = input("What product would you want (Make sure it has a capital letter)\n")
 
+#Detects what item code has been input#
 match want:
     case "A1":
         id=1
@@ -56,8 +59,9 @@ match want:
     case "B3":
         id=1
 
-if id == 1:
-    for i in range(0,5):
+
+if id == 1: #If the item code is accurate then this will run#
+    for i in range(0,5): #compares the item code to the products list#
         if code[i] == want:
             item=product[i]
             price=price[i]
@@ -65,7 +69,8 @@ if id == 1:
     os.system('CLS')
     print(item)
     print("This item costs",price)
-    choice=input("Would you like this? (yes or no)\n")
+    choice=input("Would you like this? (yes or no)\n") #Asks the user if this is the correct product#
+    
     if choice == "yes":
         os.system('CLS')
         if price2 > total:
@@ -73,13 +78,18 @@ if id == 1:
         else:
             total = total-price2
             purchase="yes"
-    while total >= 100:
+    
+    #converts the pence into pounds#
+    while total >= 100: 
         total = total- 100
         more = more + 1
+    
     if purchase == "yes":
         print("Thank you for your purchase of a",item)
     print("we have returned £",more,"and",total,"p")
-else:
+
+#if item code is inaccurate then this will run#
+else: 
     print("Error")
     while total >= 100:
         total = total- 100

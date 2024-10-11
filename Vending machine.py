@@ -71,7 +71,7 @@ while item != "End":
         if choice == "Yes":
             cost=90
             choice=0
-    elif item == "B3":
+    elif item == "B3":                             
         print("That item costs £1.30")
         choice=input("Yes or No")
         if choice == "Yes":
